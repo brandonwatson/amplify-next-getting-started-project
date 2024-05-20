@@ -2,7 +2,24 @@ import { defineBackend } from '@aws-amplify/backend';
 import { auth } from './auth/resource.js';
 import { data } from './data/resource.js';
 
-defineBackend({
+const backend = defineBackend({
   auth,
   data,
 });
+
+// extract L1 CfnUserPool resources
+const { cfnUserPool } = backend.auth.resources.cfnResources;
+// use CDK's `addPropertyOverride` to modify properties directly
+cfnUserPool.addPropertyOverride(
+  "Policies",
+  {
+    PasswordPolicy: {
+      MinimumLength: 8,
+      RequireLowercase: true,
+      RequireNumbers: false,
+      RequireSymbols: true,
+      RequireUppercase: false,
+      TemporaryPasswordValidityDays: 20,
+    },
+  }
+);
