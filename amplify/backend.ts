@@ -14,12 +14,12 @@ cfnUserPool.addPropertyOverride(
   "Policies",
   {
     PasswordPolicy: {
-      MinimumLength: 8,
+      MinimumLength: 6,
       RequireLowercase: true,
-      RequireNumbers: false,
+      //RequireNumbers: false,
       RequireSymbols: true,
-      RequireUppercase: false,
-      TemporaryPasswordValidityDays: 20,
+      //RequireUppercase: false,
+      TemporaryPasswordValidityDays: 19,
     },
   }
 );
