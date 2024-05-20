@@ -43,7 +43,7 @@ export default function App() {
   return (
     <Authenticator>{({signOut, user}) => (
       <main>
-        <h1>Todos for {user?.signInDetails?.loginId.toUpperCase()}</h1>
+        <h1>Todos for {user?.signInDetails?.loginId?.toUpperCase()}</h1>
         <button onClick={createTodo}>+ new</button>
         <ul>
           {todos.map((todo) => (
