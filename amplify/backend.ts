@@ -16,9 +16,9 @@ cfnUserPool.addPropertyOverride(
     PasswordPolicy: {
       MinimumLength: 6,
       RequireLowercase: true,
-      //RequireNumbers: false,
+      RequireNumbers: false,
       RequireSymbols: true,
-      //RequireUppercase: false,
+      RequireUppercase: false,
       TemporaryPasswordValidityDays: 19,
     },
   }
