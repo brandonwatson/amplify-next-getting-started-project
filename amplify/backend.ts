@@ -19,7 +19,7 @@ cfnUserPool.addPropertyOverride(
       RequireNumbers: false,
       RequireSymbols: true,
       RequireUppercase: false,
-      TemporaryPasswordValidityDays: 19,
+      TemporaryPasswordValidityDays: 24,
     },
   }
 );
